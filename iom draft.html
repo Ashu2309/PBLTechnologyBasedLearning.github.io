@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			background-image: linear-gradient(lightcyan,white);
+		}
+		#a11,#a12,#a21,#a22{
+			background-image: linear-gradient(lightcyan,white);
+			text-align:center;
+			color:orange;
+			font-size: 35px;
+			width:50px;
+			height: 40px;
+			margin:10px;
+			border: solid navy;
+		}
+		#A11,#A12,#A21,#A22{
+			background-image: linear-gradient( #ffd1b3,white);
+			text-align:center;
+			color:#1E90FF;
+			font-size: 30px;
+			width:50px;
+			height: 40px;
+			margin:10px;
+			border: solid navy;
+		}
+		#det{
+			text-align:center;
+			color:green;
+			font-size: 35px;
+			width:60px;
+			height: 40px;
+			margin:10px;
+			border: solid navy;
+			position: absolute;
+			left:300px;
+			top:714px;
+
+		}
+		.input{
+			margin-left: 400px;
+		}
+		.result{
+			margin-left: 400px;
+		}
+		.que{
+	margin-bottom: 50px;
+	background-color: white;
+	border: solid  ;
+	border-radius: 30px;
+	margin-right: 600px;
+	padding-left: 60px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	border-top: white;
+	border-bottom: white;
+
+}
+.ans{
+	border-radius: 30px;
+	margin-bottom: 50px;
+	background-color: white;
+	border: solid  ;
+	margin-right: 600px;
+	padding-left: 60px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	border-top: white;
+	border-bottom: white;
+}
+.As{
+	position: absolute;
+	left:200px;
+	top:630px;
+}
+
+</style>
+</head>
+<body>
+		<!-- <h1 class="As display-4"><b>A<sup>- 1</sup>=</b></h1> -->
+		<img  src="IMG.jpg" class="As">
+	
+	<div class="my-3">
+		<h1 class="display-4 text-center py-3" style="color:Navy;">MATRIX 2 X 2 :</h1>
+		<hr class="w-50 mx-auto"/>
+	</div>
+<div id="sq2" class="my-2  px-auto d-flex justify-content-center align-content-center flex-column comtainer-fluid input">
+	<div>
+ 	<label class="display-6 text-info my-3">Type Your Matrix Here :</label><br>
+ 	<div class="que">
+	<input type="text" maxlength="3" id="a11" > 
+	<input type="text" maxlength="3" id="a12" ><br>
+
+	<label class="display-6 text-info"></label>
+	<input type="text"  maxlength="3" id="a21" > 
+	<input type="text" maxlength="3" id="a22" > 
+</div>
+
+
+<div id="buttons" class="my-2">
+	<input type="button" id="button" class="btn btn-outline-info" value="Calculate" onclick="calc1()">
+		<input type="button" id="button" class="btn btn-outline-warning" value="Clear" onclick="location.reload()">
+</div>
+</div></div>
+
+<div class="my-3">
+		<hr class="w-50 mx-auto"/>
+	</div>
+<div id="sq2" class="my-2  px-auto d-flex justify-content-center align-content-center flex-column comtainer-fluid result">
+	
+ 	<label class="display-6 text-success">Answer :</label><br>
+ 	<div class="ans">
+	<input type="text" maxlength="3" id="A11" > 
+	<input type="text" maxlength="3" id="A12" ><br>
+
+	<label class="display-6 text-info"></label>
+	<input type="text"  maxlength="3" id="A21" > 
+	<input type="text" maxlength="3" id="A22" >
+	</div>
+	</div>
+	</div> 
+<input type="text" id="det">
+
+</form>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	function calc1(){
+			var a11=document.getElementById("a11").value;
+			var a12=document.getElementById("a12").value;
+			var a21=document.getElementById("a21").value;
+			var a22=document.getElementById("a22").value;
+
+//determinant
+			var deter=(a11*a22)-(a12*a21)
+
+//cofactors
+			var c11=a22;
+			var c12=-a21;
+			var c21=-a12;
+			var c22=a11;
+
+//ajdA
+			var t11=c11;
+			var t12=c21;
+			var t21=c12;
+			var t22=c22;
+
+
+			document.getElementById("det").value=deter;
+			document.getElementById("A11").value=t11;
+			document.getElementById("A12").value=t12;
+			document.getElementById("A21").value=t21;
+			document.getElementById("A22").value=t22;
+		}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style type="text/css">
+		body{
+			background-image: linear-gradient(lightcyan,white);
+		}
+		#b11,#b12,#b13,#b21,#b22,#b23,#b31,#b32,#b33{
+			background-image: linear-gradient(lightcyan,white);
+			text-align:center;
+			color:orange;
+			font-size: 35px;
+			width:50px;
+			height: 40px;
+			margin:10px;
+			border: solid navy;
+		}
+		#B11,#B12,#B13,#B21,#B22,#B23,#B31,#B32,#B33{
+			background-image: linear-gradient( #ffd1b3,white);
+
+			text-align:center;
+			color:#1E90FF;
+			font-size: 30px;
+			width:50px;
+			height: 40px;
+			margin:10px;
+			border: solid navy;
+		}
+		#det{
+			text-align:center;
+			color:green;
+			font-size: 35px;
+			width:60px;
+			height: 40px;
+			margin:10px;
+			border: solid navy;
+			position: absolute;
+			left:200px;
+			top:820px;
+
+		}
+		.input{
+			margin-left: 300px;
+		}
+		.result{
+			margin-left: 300px;
+		}
+		.que{
+	margin-bottom: 50px;
+	background-color: white;
+	border: solid  ;
+	border-radius: 30px;
+	margin-right: 680px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	border-top: white;
+	border-bottom: white;
+
+}
+.ans{
+	border-radius: 30px;
+	margin-bottom: 50px;
+	background-color: white;
+	border: solid  ;
+	margin-right: 680px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	padding-top: 30px;
+	border-top: white;
+	border-bottom: white;
+}
+.As{
+	position: absolute;
+	left:100px;
+	top:730px;
+}
+
+</style>
+</head>
+<body>
+		<!-- <h1 class="As display-4"><b>A<sup>- 1</sup>=</b></h1> -->
+		<img  src="IMG.jpg" class="As">
+
+	
+	<div class="my-3">
+		<h1 class="display-4 text-center py-3" style="color:Navy;">MATRIX 3 X 3 :</h1>
+		<hr class="w-50 mx-auto"/>
+	</div>
+<div id="sq2" class="my-2  px-auto d-flex justify-content-center align-content-center flex-column comtainer-fluid input">
+	<div>
+ 	<label class="display-6 text-info my-3">Type Your Matrix Here :</label><br>
+ 	<div class="que">
+	<input type="text" id="b11">
+	<input type="text" id="b12">
+	<input type="text" id="b13"><br>
+
+	<input type="text" id="b21">
+	<input type="text" id="b22">
+	<input type="text" id="b23"><br>
+
+	<input type="text" id="b31">
+	<input type="text" id="b32">
+	<input type="text" id="b33">
+</div>
+
+
+<div id="buttons" class="my-2">
+	<input type="button" id="button" class="btn btn-outline-info" value="Calculate" onclick="calc2()">
+		<input type="button" id="button" class="btn btn-outline-warning" value="Clear" onclick="location.reload()">
+		<input type="button" id="button" class="btn btn-outline-danger" value="BACK" onclick=location.href="inverseofmatrix.html">
+</div>
+</div></div>
+
+<div class="my-3">
+		<hr class="w-50 mx-auto"/>
+	</div>
+<div id="sq2" class="my-2  px-auto d-flex justify-content-center align-content-center flex-column comtainer-fluid result">
+	
+ 	<label class="display-6 text-success">Answer :</label><br>
+ 	<div class="ans">
+	<input type="text"  id="B11">
+	<input type="text"  id="B12">
+	<input type="text"  id="B13"><br>
+
+	<input type="text"  id="B21">
+	<input type="text"  id="B22">
+	<input type="text"  id="B23"><br>
+
+	<input type="text"  id="B31">
+	<input type="text"  id="B32">
+	<input type="text"  id="B33"><br>
+	</div>
+	</div>
+	</div> 
+<input type="text" id="det">
+</form>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+	function calc2()
+		{
+
+			var a11=document.getElementById("b11").value;
+			var a12=document.getElementById("b12").value;
+			var a13=document.getElementById("b13").value;
+
+			var a21=document.getElementById("b21").value;
+			var a22=document.getElementById("b22").value;
+			var a23=document.getElementById("b23").value;
+
+			var a31=document.getElementById("b31").value;
+			var a32=document.getElementById("b32").value;
+			var a33=document.getElementById("b33").value;
+
+			var deter= (a11*a22*a33)-(a11*a23*a32)-((a12*a21*a33)-(a12*a23*a31))+((a13*a21*a32)-(a13*a22*a31));
+			//document.write(deter);
+
+			var c11=(a22*a33)-(a23*a32);
+			var c12=-((a21*a33)-(a23*a31));
+			var c13=(a21*a32)-(a22*a31);
+
+			var c21=-((a12*a33)-(a13*a32));
+			var c22=(a11*a33)-(a13*a31);
+			var c23=-((a11*a32)-(a12*a31));
+
+			var c31=(a12*a23)-(a13*a22);
+			var c32=-((a11*a23)-(a13*a21));
+			var c33=(a11*a12)-(a12*a21);
+
+			//document.write(c11);
+			document.getElementById("det").value=deter;
+
+			document.getElementById("B11").value=c11;
+			document.getElementById("B12").value=c21;
+	        document.getElementById("B13").value=c31;
+
+			document.getElementById("B21").value=c12;
+			document.getElementById("B22").value=c22;
+			document.getElementById("B23").value=c32;
+
+			document.getElementById("B31").value=c13;
+			document.getElementById("B32").value=c23;
+			document.getElementById("B33").value=c33;
+
+
+
+
+		}
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style type="text/css">
+		*{
+	padding: 0px;
+	margin: 0;
+}
+body{background-image: linear-gradient(cyan,white);}
+.content{
+	margin-right: 300px;
+}
+figure{
+	margin-right:200px;
+}
+.label0,.label1,.label2,.label3{
+	font-size: 30px;
+	 background: linear-gradient(
+            to right, black,grey);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+}
+.text0,.text1,.text2,.text3{
+	font-size: 30px;
+	 background: linear-gradient(
+            to right, #1D2B64,#f8cdda);
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+}
+.main{
+	margin-bottom: 50px;
+	background-color: white;
+	border: solid  ;
+	border-radius: 25px;
+
+}
+#button{
+/*	position:relative;*/
+	margin-bottom: 20px;
+	margin-left: 20px;
+	font-size:30px;
+}
+	</style>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+	<script type="text/javascript">
+		
+function calc() {
+var r=document.getElementById('radius').value;
+var h=document.getElementById('height').value;
+
+var l=document.getElementById('l').value;
+var csa=document.getElementById('csa').value;
+var tsa=document.getElementById('tsa').value;
+var pie=3.14;
+var sl=Math.pow((r*r + h*h),1/2);
+var n=/^[0-9]+$/;
+
+
+	if (r.match(n) && h.match(n))
+	{
+		document.getElementById("l").innerHTML=Math.pow((r*r + h*h),1/2)+ " sq.m";
+		document.getElementById("tsa").innerHTML=pie*r*sl+pie*r*r + " sq.m";
+		document.getElementById("csa").innerHTML=(pie*r*(sl+r) )+ ' sq.m';
+		document.getElementById("vol").innerHTML=pie*r*r*(h/3) + " cu.m";
+		//console.log(2*pie*r*h);
+	}
+	else{
+		document.getElementById("error").innerHTML="Only numbers";
+	}
+
+}
+	</script>
+	<title></title>
+</head>
+<body id="body" >
+	<div class="text-center">
+		<h1 class="display-4" >CONE</h1>
+		<hr class="w-25 mx-auto"/>
+   </div>
+<div class=" main col-xxl-8 col-xl-8 col-lg-8 col-md-8 col-12 mx-auto d-flex justify-content-center align-items-start flex-row">
+<div >
+	<form class="content container-fluid" >
+
+		<label class="text-danger display-6"><b>Radius</b> :</label><input type="text" class="form-control mx-auto" id="radius" placeholder="radius in metre"><br>
+		<label class="text-info  display-6"><b>Height</b> :</label><input type="text" class="form-control mx-auto" id="height" placeholder="height in metre"><br>
+
+		<label class="text-dark  label0"><b>Slant Height ( l )  :</b> :</label><span class="text0" id="l"></span><br><br>
+		<label class="text-dark  label1"><b>Curved Surface Area</b> :</label><span class="text1" id="csa"></span><br>
+		<label class="text-dark  label2"><b>Total Surface Area</b> :</label><span class="text2" id="tsa"></span><br>
+		<label class="text-dark  label3"><b>Volume</b> :</label><span class="text3" id="vol"></span><br>
+
+		<span id="error" class="display-6 text-danger"></span><br>
+
+		<input type="button" id="button" class="btn btn-outline-info" value="Calculate" onclick="calc()">
+		<input type="button" id="button" class="btn btn-outline-warning" value="Clear" onclick="location.reload()">
+	</form>
+</div>
+	<div>
+	<figure>
+		<img src="figure_cone.png"  height=400px width=450px  class="fig py-5 px-5">
+	</figure>
+	</div>
+</div>
+</body>
+</html>
