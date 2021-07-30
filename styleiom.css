@@ -1,0 +1,12 @@
+body{
+	background-image:url(https://cdn.dribbble.com/users/3667094/screenshots/14761061/media/40456d442d121e81d40eb5553e66f2b0.png?compress=1&resize=400x300);
+}
+
+#dropdown{
+	margin: 200px;
+	margin-top: 50px;
+	border:solid;
+	border-color: #6495ED;
+	border-radius: 25px;
+	background-color: white;
+}
